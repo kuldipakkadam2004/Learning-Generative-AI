@@ -151,31 +151,8 @@ exit code, which the `catch` already handles.
 
 ---
 
-## 8. Bugs / rough edges spotted in this version
 
-1. **Dead code after `break`:**
-   ```js
-   } else {
-       break;                     // runs first
-       console.log(result.text);  // unreachable
-       History.push({...});       // unreachable
-   }
-   ```
-   The final text answer is never printed and never saved to history.
-   Fix = move `break` to the end of the block.
-
-2. `functionCalls[0]` only — same as lecture 1. Less harmful here since file
-   operations are naturally sequential.
-
-3. No `maxBuffer` setting on `exec` (default ~1MB). Reading a big file could throw.
-
-4. No confirmation before destructive commands. The model could emit `rm -rf`.
-
-5. History grows unbounded across questions.
-
----
-
-## 9. Safety notes (important for this lecture specifically)
+## 8. Safety notes (important for this lecture specifically)
 
 This agent has **the same permissions I do**. Whatever I can delete, it can delete.
 
@@ -188,7 +165,7 @@ Habits to build:
 
 ---
 
-## 10. Mental model
+## 9. Mental model
 
 > Lecture 1 taught the agent to **look things up**.
 > Lecture 2 taught it to **take actions**.

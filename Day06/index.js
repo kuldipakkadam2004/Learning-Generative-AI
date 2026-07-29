@@ -116,13 +116,14 @@ async function buildWebsite() {
 					},
 				],
 			});
-		} else {
-			break;
+		}
+		else {
 			console.log(result.text);
 			History.push({
 				role: "model",
 				parts: [{ text: result.text }],
 			});
+			break;
 		}
 	}
 }
